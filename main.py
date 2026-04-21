@@ -9,7 +9,6 @@ def print_pdf():
     pdf = FPDF(orientation='P', unit='mm', format='A4')
     df = pd.read_csv('topics.csv')
     for index, row in df.iterrows():
-        # for _ in row
         pdf.add_page()
         pdf.set_text_color(100, 100, 100)
         pdf.set_font('Times', 'B', size=12)
@@ -17,6 +16,8 @@ def print_pdf():
 
         pdf.line(10, 21, 200, 21)
 
+        for _ in range(row['Pages'] -1 ):
+            pdf.add_page()
     pdf.output('My_PDF_file.pdf')
 
 # Press the green button in the gutter to run the script.
