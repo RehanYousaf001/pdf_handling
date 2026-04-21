@@ -15,6 +15,8 @@ def print_pdf():
         pdf.set_font('Times', 'B', size=12)
         pdf.cell(0, 12, txt=row["Topic"], ln=1, align='L')
 
+        pdf.line(10, 21, 200, 21)
+
     pdf.output('My_PDF_file.pdf')
 
 # Press the green button in the gutter to run the script.
